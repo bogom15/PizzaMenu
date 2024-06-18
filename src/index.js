@@ -50,9 +50,47 @@ function App() {
   return (
     <div>
       <h1>Hello React</h1>
+      <Menu />
+
+      <Footer />
+    </div>
+  );
+}
+
+function Header() {
+  return (
+    <div>
+      <h1> React Pizza Menu</h1>
+    </div>
+  );
+}
+
+function Menu() {
+  return (
+    <div>
+      <h2>Menu</h2>
       <Pizza />
       <Pizza />
       <Pizza />
+    </div>
+  );
+}
+
+function Footer() {
+  const hour = new Date().getHours();
+  const openHour = 12;
+  const closeHour = 22;
+  const isOpen = hour >= openHour && hour <= closeHour;
+  console.log(isOpen);
+
+  // if (hour >= openHour && hour <= closeHour) {
+  //   alert("We are currently open");
+  // } else {
+  //   alert(" Sorry We are currently closed");
+  // }
+  return (
+    <div>
+      <footer>{new Date().toLocaleTimeString()} We are currently open</footer>
     </div>
   );
 }
